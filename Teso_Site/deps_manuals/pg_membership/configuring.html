@@ -1,0 +1,429 @@
+
+ 
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="http://code.google.com/p/pgprovider/wiki/ConfiguringTheMembershipProvider" />
+ 
+ <script type="text/javascript">
+ 
+ (function(){var a=function(b){this.t={};this.tick=function(b,c,d){c=void 0!=d?d:(new Date).getTime();this.t[b]=c};this.tick("start",null,b)},e=new a;window.jstiming={Timer:a,load:e};try{var f=null;window.chrome&&window.chrome.csi&&(f=Math.floor(window.chrome.csi().pageT));null==f&&window.gtbExternal&&(f=window.gtbExternal.pageT());null==f&&window.external&&(f=window.external.pageT);f&&(window.jstiming.pt=f)}catch(g){};})();
+
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"assetHostPath":"http://www.gstatic.com/codesite/ph","token":null,"projectName":"pgprovider","assetVersionPath":"http://www.gstatic.com/codesite/ph/14991132752152833989","domainName":null,"relativeBaseUrl":"","profileUrl":null,"loggedInUserEmail":null,"projectHomeUrl":"/p/pgprovider"};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+ 
+ </script>
+ 
+ 
+ <title>ConfiguringTheMembershipProvider - 
+ pgprovider -
+ 
+ Configuration options for the pgMembershipProvider - 
+ ASP.NET 4.0 Membership and Role Providers for PostgreSQL - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/14991132752152833989/css/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/14991132752152833989/css/ph_detail.css" >
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="/feeds/p/pgprovider/svnchanges/basic?path=/wiki/ConfiguringTheMembershipProvider.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/14991132752152833989/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+</head>
+<body class="t6">
+<script type="text/javascript">
+ window.___gcfg = {lang: 'en'};
+ (function() 
+ {var po = document.createElement("script");
+ po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(po, s);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>&#9660;</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fpgprovider%2Fwiki%2FConfiguringTheMembershipProvider&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fpgprovider%2Fwiki%2FConfiguringTheMembershipProvider" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" cellpadding="0" cellspacing="0"
+ itemscope itemtype="http://schema.org/CreativeWork">
+ <tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="/p/pgprovider">
+ <a href="/p/pgprovider/">
+ 
+ <img src="http://www.gstatic.com/codesite/ph/images/defaultlogo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="/p/pgprovider/"><span itemprop="name">pgprovider</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link"
+ href="/p/pgprovider/"><span itemprop="description">ASP.NET 4.0 Membership and Role Providers for PostgreSQL</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" value="" type="text">
+ 
+ <input type="submit" name="projectsearch" value="Search projects" >
+ </form>
+ 
+ </tr>
+ </table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="/p/pgprovider/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="/p/pgprovider/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/pgprovider/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/pgprovider/issues/list"
+ class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="/p/pgprovider/source/checkout"
+ class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <div class=gtbc></div>
+</div>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/pgprovider/w/list" method="GET" style="display:inline">
+ <select id="can" name="can" >
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1" >&nbsp;All wiki pages</option>
+ <option value="3" >&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4" >&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input type="text" size="38" id="searchq" name="q" value=""
+ autocomplete="off" ></span>
+ 
+ 
+ 
+ <input type="submit" value="Search" >
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td align="right" valign="top" class="bevel-right"></td>
+ </tr>
+</table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol"
+ 
+>
+
+ 
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tr>
+ 
+ 
+ <td style="vertical-align:top; padding-left:5px">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size:120%;font-weight:bold">ConfiguringTheMembershipProvider</span>
+ &nbsp;
+ <div> 
+ 
+ <i>Configuration options for the pgMembershipProvider</i>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float:right">
+ Updated <span title="Sun Nov 18 09:37:51 2012">
+ Nov 18, 2012</span>
+ 
+ by 
+
+ <a class="userlink"
+ href="/u/jholovacs/">jholovacs</a
+>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <h1><a name="Introduction"></a>Introduction<a href="#Introduction" class="section_anchor"></a></h1><p>The pgMembershipProvider class follows the standard Microsoft ASP.NET provider pattern; to see how a MembershipProvider is generally implemented, please see the Microsoft documentation at <a href="http://msdn.microsoft.com/en-us/library/yh26yfzy.aspx" rel="nofollow">http://msdn.microsoft.com/en-us/library/yh26yfzy.aspx</a>. </p><h1><a name="Example"></a>Example<a href="#Example" class="section_anchor"></a></h1><p>A typical implementation of the configuration in the web.config file will resemble this: </p><pre class="prettyprint">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;configuration&gt;
+	&lt;configSections&gt;
+		&lt;section name=&quot;log4net&quot; type=&quot;log4net.Config.Log4NetConfigurationSectionHandler, log4net&quot;/&gt;
+	&lt;/configSections&gt;
+	&lt;connectionStrings&gt;
+		&lt;add name=&quot;pgProvider&quot; connectionString=&quot;Server=10.10.10.10;Port=5432;Database=security;User Id=security;Password=S3cUr1#Y;&quot; /&gt;
+	&lt;/connectionStrings&gt;
+	&lt;startup&gt;
+		&lt;supportedRuntime version=&quot;v4.0&quot; sku=&quot;.NETFramework,Version=v4.0&quot;/&gt;
+	&lt;/startup&gt;
+	&lt;system.web&gt;
+		&lt;membership defaultProvider=&quot;pgMembershipProvider&quot;&gt;
+			&lt;providers&gt;
+				&lt;remove name=&quot;AspNetSqlMembershipProvider&quot;/&gt;
+				&lt;add name=&quot;pgMembershipProvider&quot; type=&quot;pgProvider.pgMembershipProvider, pgProvider&quot; applicationName=&quot;pgProvider.Tests&quot;/&gt;
+			&lt;/providers&gt;
+		&lt;/membership&gt;
+	&lt;/system.web&gt;
+	&lt;log4net&gt;
+		&lt;appender name=&quot;ConsoleAppender&quot; type=&quot;log4net.Appender.ConsoleAppender&quot;&gt;
+			&lt;layout type=&quot;log4net.Layout.PatternLayout&quot;&gt;
+				&lt;conversionPattern value=&quot;%date [%thread] %-5level %logger [%property{NDC}] - %message%newline&quot; /&gt;
+			&lt;/layout&gt;
+		&lt;/appender&gt;
+		&lt;root&gt;
+			&lt;level value=&quot;DEBUG&quot; /&gt;
+			&lt;appender-ref ref=&quot;ConsoleAppender&quot; /&gt;
+		&lt;/root&gt;
+	&lt;/log4net&gt;
+&lt;/configuration&gt;</pre><h1><a name="Configuration_Options"></a>Configuration Options<a href="#Configuration_Options" class="section_anchor"></a></h1><p>The following options are attributes that can be applied to the provider in the <tt>web.config</tt> file.  Please note that the attribute names are <i>case-sensitive</i>, and will always start with a lowercase letter.   <ul><li><i>connectionStringName</i>.  (string, default &quot;pgProvider&quot;) Sets the provider to reference a named connection string in the <tt>connectionStrings</tt> section.  The connection string must be valid for Npgsql connections.  <strong>If the connection string does not exist or is invalid, the provider will not allow you to continue.</strong> </li><li><i>passwordStrengthRegularExpression</i>.  (string, default &quot;&quot;) Allows the user to specify a pattern that all passwords must adhere to to be considered valid.  <strong>Note:</strong> reset passwords will ignore the password complexity checks. </li><li><i>applicationName</i>.  (string, default &quot;&quot;) Sets the name of the application using the provider. </li><li><i>enablePasswordReset</i>.  (boolean, default &quot;true&quot;) Allows a user&#x27;s password to be reset.  Attempting to reset a password with this disabled will result in an <tt>InvalidOperationException</tt>.  Default is <strong>true</strong>. </li><li><i>enablePasswordRetrieval</i>.  (boolean, default &quot;false&quot;) Specifies whether or not the password can be extracted from the database and read.  If this is set to true, the method for storing password data will switch from the default SHA384 hash mechanism to an RSA-encrypted byte array.  For this reason, if <i>enablePasswordRetrieval</i> is set to <tt>true</tt>, the <i>encryptionKey</i> attribute must also be set. </li><li><i>requiresQuestionAndAnswer</i>. (boolean, default &quot;false&quot;) Specifies that a password recovery cleartext question and a corresponding encrypted answer will be stored to allow a user to reset their own account online.  <strong>Note</strong> The password reset functionality behaves differently depending on this value.  If this is set to false, the answer parameter in the <tt>ResetPassword()</tt> will be ignored, assuming the reset is being done by someone with administrative privileges.  If set to true, the answer parameter will be examined, assuming the user in question is resetting their own password. </li><li><i>requiresUniqueEmail</i>. (boolean, default &quot;true&quot;) Specifies that a user&#x27;s email address will be unique for each user.  This will prevent duplicate email addresses from being added to different users. </li><li><i>maxInvalidPasswordAttempts</i>.  (integer, default &quot;5&quot;) Specifies that after the configured number of consecutive failed logon attempts for a bad username/ password in the specified <i>passwordAttemptWindow</i>, the user will be locked out of their account to discourage and/ or prevent brute force password attacks.  Setting this to 0 will disable user lockout. </li><li><i>minRequiredNonAlphanumericCharacters</i>.  (integer, default &quot;0&quot;) Specifies that passwords must contain at least the configured number of non-alphanumeric characters, i.e. special characters.  Password changes will not be accepted without the minimum non-alphanumeric characters.  <strong>Note:</strong> reset passwords will ignore the password complexity checks. </li><li><i>passwordAttemptWindow</i>.  (integer, default &quot;5&quot;) Specifies the window, in minutes, that will be considered for determining if the <i>maxInvalidPasswordAttempts</i> failed attempts are consecutive. </li><li><i>encryptionKey</i>.  (string, default &quot;&quot;) The base-64 encoded symmetric encryption key used for storing passwords in reversible format in the database.  This is required for configurations where the <i>enablePasswordRetrieval</i> attribute is set to <tt>true</tt>.  To generate a new encryption key for your application, <i>see</i> <a href="/p/pgprovider/wiki/CreateANewEncryptionKey">Create a New Encryption Key</a>.  This setting is ignored if <i>enablePasswordRetrieval</i> is set to <tt>false</tt>. </li><li><i>minSaltCharacters</i>.  (integer, default &quot;30&quot;) The minimum number of randomly-generated salt characters for hashing passwords.  The password hashes and the password-reset hashes both use this value.  This can be set to as low as 0 or as high as 250.  It cannot be set higher than <i>maxSaltCharacters</i>. </li><li><i>maxSaltCharacters</i>.  (integer, default &quot;60&quot;) The maximum number of randomly-generated salt characters for hashing passwords.  The password hashes and the password-reset hashes both use this value.  This can be set to as low as 1 or as high as 250.  It cannot be set lower than <i>minSaltCharacters</i>. </li><li><i>minRequiredPasswordLength</i>.  (integer, default &quot;6&quot;) The minimum number of characters allowed to be used in a password.  It cannot be set below 0.  The password reset mechanism will auto-generate a password of this length, if it is set. </li><li><i>lockoutTime</i>.  (integer, default &quot;0&quot;) The number of minutes from a user lockout event before the user can attempt to log in again.  This allows an automatic &quot;unlock&quot; after the configured minutes.  The default value of 0 requires the user to be explicitly unlocked. </li><li><i>sessionTime</i>.  (integer, default &quot;15&quot;) The number of minutes since activity was detected on a user account before the user is considered to be &quot;offline.&quot; </li><li><i>dbOwner</i>. (string, default &quot;security&quot;) The owner of the provider database.  Changing this can affect how some objects are created. </li></ul></p>
+ </div>
+ </div>
+ </td><tr>
+</table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">&#9658;</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fpgprovider%2Fwiki%2FConfiguringTheMembershipProvider&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fpgprovider%2Fwiki%2FConfiguringTheMembershipProvider"
+ >Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input type="hidden" name="sequence_num" value="" >
+ <input type="hidden" name="create_time" value="" >
+ <input type="hidden" name="mode" value="" >
+ <input type="hidden" name="pagename" value="ConfiguringTheMembershipProvider" >
+ <input type="hidden" name="token" value="" >
+ </form>
+
+
+ <script src="http://www.gstatic.com/codesite/ph/14991132752152833989/js/prettify/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="http://www.gstatic.com/codesite/ph/14991132752152833989/js/dit_scripts.js"></script>
+
+
+
+  
+ 
+ 
+ <script type="text/javascript" src="http://www.gstatic.com/codesite/ph/14991132752152833989/js/ph_core.js"></script>
+ 
+ <script type="text/javascript" src="http://www.gstatic.com/codesite/ph/14991132752152833989/js/ph_dwiki.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ 
+ <script type="text/javascript">_CS_reportToCsi();</script>
+ 
+ </body>
+</html>
+
+

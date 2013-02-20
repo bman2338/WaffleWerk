@@ -1,0 +1,12 @@
+Stack
+NHibernate 4
+MVC 4
+.Net 4.5
+Postgres 9.2
+Nauck Membership Provider
+http://nuget.org/packages/Nauck.PostgresSQLProvider
+
+Orchard CMS
+http://www.orchardproject.net/
+
+Maybe MongoDB

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MongoWSAT</id>
+    <version>1.0.4</version>
+    <title />
+    <authors>alanning</authors>
+    <owners>alanning</owners>
+    <licenseUrl>http://www.opensource.org/licenses/lgpl-2.1.php</licenseUrl>
+    <projectUrl>https://github.com/alanning/MongoWSAT</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A pre-configured user administration section for ASP.NET websites (both MVC and WebForms) using MongoDB Membership and Role Providers.
+(Requires .NET 4 Framework)
+
+See the project page for an example ASP.NET MVC app which uses MongoWSAT.</description>
+    <releaseNotes>Version 1.0.4 updates the example Web.config to be useable out-of-the-box as a drop-in replacement in new ASP.NET MVC 3 projects.  Also updates MongoProviders.dll to latest which fixes a bug in ResetPassword when using the hashed password format.</releaseNotes>
+    <copyright>2011-2012 Adrian Lanning</copyright>
+    <tags>mongo mongodb membership membershipprovider mvc wsat admin mywsat aspnetmvc</tags>
+    <references>
+      <reference file="AjaxControlToolkit.dll" />
+      <reference file="FluentMongo.dll" />
+      <reference file="MongoDB.Bson.dll" />
+      <reference file="MongoDB.Driver.dll" />
+      <reference file="MongoProviders.dll" />
+    </references>
+  </metadata>
+</package>

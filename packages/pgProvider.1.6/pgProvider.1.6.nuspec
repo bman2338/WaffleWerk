@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>pgProvider</id>
+    <version>1.6</version>
+    <title>PostgreSQL ASP.NET Membership and Role Provider</title>
+    <authors>Jeremy Holovacs</authors>
+    <owners>Jeremy Holovacs</owners>
+    <licenseUrl>http://opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>http://code.google.com/p/pgprovider/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fully functional ASP.NET Membership Provider and Role Provider using a PostgreSQL database.</description>
+    <summary>Microsoft .NET Membership and Role provider services for PostgreSQL 8.4+.</summary>
+    <releaseNotes>v1.1 changed the log4net referenced assembly... Crystal Reports is the devil.
+v1.2 changed the log4net references to Common.Logging references.  This library is no longer dependent on log4net.  Implemented an automatic schema checker and updater, the script is no longer required to be run as long as the provider db user is the owner of the database.  Added a PurgeActivity function to clean up historical data.  Refactored some of the classes.
+v1.3 made all role names, user names, email addresses, and application names case-insensitive.  Also cleaned up a bit of the logging that *might* improve performance in high-volume applications.
+v1.4 made all exception classes serializable and prevented the profiles table from being created if it was not already created by previous versions.  (Also changed the versioning numbers to match the source code).
+v1.5 fixes a problem with servers before v9.1 that would not build the schema.
+v1.6 corrects an bug where the last login timestamp would not correctly persist in the users table.</releaseNotes>
+    <copyright>2011-2013 Jeremy Holovacs.</copyright>
+    <dependencies>
+      <dependency id="Npgsql" version="2.0.11" />
+      <dependency id="Common.Logging" version="2.1.1" />
+    </dependencies>
+    <references>
+      <reference file="pgProvider.dll" />
+    </references>
+  </metadata>
+</package>
